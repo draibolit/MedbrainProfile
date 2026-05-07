@@ -29,35 +29,14 @@
     /* ── HERO ── */
     header {
       background: var(--navy);
-      padding: 64px 24px 56px;
+      padding: 56px 24px 48px;
       text-align: center;
     }
 
-    .logo-mark {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 60px;
-      height: 60px;
-      background: var(--teal);
-      border-radius: 14px;
-      margin-bottom: 20px;
-    }
-
-    .logo-mark svg { width: 34px; height: 34px; fill: #fff; }
-
-    header h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      color: #ffffff;
-      letter-spacing: -0.5px;
-    }
-
-    header p {
-      margin-top: 12px;
-      font-size: 1.1rem;
-      color: #90c4e8;
-      letter-spacing: 0.3px;
+    .logo-svg {
+      display: block;
+      width: 180px;
+      margin: 0 auto 8px;
     }
 
     .divider {
@@ -298,13 +277,47 @@
 <body>
 
   <header>
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9 3a5 5 0 0 0-4.95 5.5A4.5 4.5 0 0 0 5 17.5V18a2 2 0 0 0 2 2h1v-2H7v-.58A2.5 2.5 0 0 1 4.5 15a2.5 2.5 0 0 1 .55-1.57A3 3 0 0 0 9 10.17V9h2v1.17a3 3 0 0 0 3.95 2.26A2.5 2.5 0 0 1 19.5 15a2.5 2.5 0 0 1-2.5 2.42V18h-1v2h1a2 2 0 0 0 2-2v-.5a4.5 4.5 0 0 0 .95-8.98A5 5 0 0 0 15 3a4.98 4.98 0 0 0-3 1A4.98 4.98 0 0 0 9 3z"/>
-      </svg>
-    </div>
-    <h1>Medbrain</h1>
-    <p>Healthcare Technology</p>
+    <!-- Medbrain logo — circular network icon + wordmark -->
+    <svg class="logo-svg" viewBox="0 0 260 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Medbrain">
+      <!-- Icon: concentric arcs with nodes -->
+      <g transform="translate(130,118)">
+        <!-- Outer arc: from ~320° to ~200° (gap at bottom-right) -->
+        <path d="M 47,-65 A 78,78 0 1,0 -68,38"
+              fill="none" stroke="#4EC9C0" stroke-width="9" stroke-linecap="round"/>
+        <!-- Outer nodes -->
+        <circle cx="47"  cy="-65" r="10" fill="#4EC9C0"/>
+        <circle cx="-68" cy="38"  r="10" fill="#4EC9C0"/>
+
+        <!-- Middle arc: from ~340° to ~210° -->
+        <path d="M 52,-18 A 55,55 0 1,0 -46,30"
+              fill="none" stroke="#4EC9C0" stroke-width="9" stroke-linecap="round"/>
+        <!-- Middle nodes -->
+        <circle cx="52"  cy="-18" r="7" fill="#4EC9C0"/>
+        <circle cx="-46" cy="30"  r="7" fill="#4EC9C0"/>
+
+        <!-- Inner arc: from ~340° to ~210° -->
+        <path d="M 32,-10 A 34,34 0 1,0 -28,19"
+              fill="none" stroke="#4EC9C0" stroke-width="9" stroke-linecap="round"/>
+
+        <!-- Center dot -->
+        <circle cx="0" cy="0" r="13" fill="#4EC9C0"/>
+      </g>
+
+      <!-- Wordmark -->
+      <text x="130" y="222"
+            text-anchor="middle"
+            font-family="'Segoe UI', system-ui, sans-serif"
+            font-size="42" font-weight="800" letter-spacing="-1"
+            fill="#0d3b6e">medbrain</text>
+
+      <!-- Tagline -->
+      <text x="130" y="254"
+            text-anchor="middle"
+            font-family="'Segoe UI', system-ui, sans-serif"
+            font-size="11.5" font-weight="500" letter-spacing="3"
+            fill="#4EC9C0">REDEFINING HEALTHCARE SOLUTIONS</text>
+    </svg>
+
     <div class="divider"></div>
   </header>
 
