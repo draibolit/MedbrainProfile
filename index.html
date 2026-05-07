@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -44,11 +44,7 @@
       margin-bottom: 20px;
     }
 
-    .logo-mark svg {
-      width: 34px;
-      height: 34px;
-      fill: #fff;
-    }
+    .logo-mark svg { width: 34px; height: 34px; fill: #fff; }
 
     header h1 {
       font-size: clamp(2rem, 5vw, 3rem);
@@ -72,10 +68,10 @@
       margin: 20px auto 0;
     }
 
-    /* ── PRODUCTS ── */
+    /* ── MAIN ── */
     main {
       flex: 1;
-      max-width: 820px;
+      max-width: 860px;
       width: 100%;
       margin: 0 auto;
       padding: 56px 24px;
@@ -88,9 +84,64 @@
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--blue);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
     }
 
+    /* ── VISION / MISSION ── */
+    .vm-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 56px;
+    }
+
+    @media (max-width: 560px) {
+      .vm-grid { grid-template-columns: 1fr; }
+    }
+
+    .vm-card {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 28px 26px;
+      color: #fff;
+    }
+
+    .vm-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+
+    .vm-icon svg { width: 22px; height: 22px; fill: var(--teal); }
+
+    .vm-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.3px;
+      margin-bottom: 10px;
+    }
+
+    .vm-card .vi {
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #e0f0fb;
+    }
+
+    .vm-card .en {
+      font-size: 0.8rem;
+      line-height: 1.55;
+      color: #7bacc8;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ── PRODUCT CARDS ── */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -105,11 +156,9 @@
       background: #fff;
       border: 1.5px solid var(--border);
       border-radius: 14px;
-      padding: 32px 28px;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
-      gap: 20px;
       transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     }
 
@@ -119,63 +168,85 @@
       transform: translateY(-3px);
     }
 
+    .card-img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .card-body {
+      padding: 22px 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 14px;
+    }
+
+    .card-header-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .card-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 9px;
+      flex-shrink: 0;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .card-icon svg {
-      width: 26px;
-      height: 26px;
-      fill: #fff;
-    }
+    .card-icon svg { width: 22px; height: 22px; fill: #fff; }
 
     .card h2 {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--text);
       line-height: 1.2;
     }
 
     .card .domain {
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       color: var(--muted);
       margin-top: 2px;
     }
 
-    .card .desc {
-      font-size: 0.9rem;
-      color: var(--muted);
+    .card .desc-vi {
+      font-size: 0.88rem;
+      color: var(--text);
       line-height: 1.55;
-      margin-top: 10px;
+    }
+
+    .card .desc-en {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.5;
+      font-style: italic;
     }
 
     .visit-btn {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 9px 20px;
+      padding: 9px 18px;
       background: var(--blue);
       color: #fff;
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 600;
       text-decoration: none;
       border-radius: 8px;
       transition: background 0.18s ease;
       margin-top: auto;
+      align-self: flex-start;
     }
 
     .visit-btn:hover { background: #005f8e; }
-
-    .visit-btn svg {
-      width: 14px;
-      height: 14px;
-      fill: #fff;
-    }
+    .visit-btn svg { width: 13px; height: 13px; fill: #fff; }
 
     /* ── COMPANY INFO ── */
     .company-section {
@@ -186,26 +257,19 @@
       padding: 36px 32px;
     }
 
-    .company-section .section-label {
-      text-align: left;
-      margin-bottom: 24px;
-    }
+    .company-section .section-label { text-align: left; margin-bottom: 24px; }
 
     .company-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 12px 40px;
+      gap: 16px 40px;
     }
 
     @media (max-width: 600px) {
       .company-grid { grid-template-columns: 1fr; }
     }
 
-    .info-row {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
+    .info-row { display: flex; flex-direction: column; gap: 2px; }
 
     .info-row .label {
       font-size: 0.7rem;
@@ -215,17 +279,9 @@
       color: var(--blue);
     }
 
-    .info-row .value {
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.5;
-    }
+    .info-row .value { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
 
-    .info-row a.value {
-      color: var(--blue);
-      text-decoration: none;
-    }
-
+    .info-row a.value { color: var(--blue); text-decoration: none; }
     .info-row a.value:hover { text-decoration: underline; }
 
     /* ── FOOTER ── */
@@ -243,7 +299,6 @@
 
   <header>
     <div class="logo-mark">
-      <!-- Brain / neural icon -->
       <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         <path d="M9 3a5 5 0 0 0-4.95 5.5A4.5 4.5 0 0 0 5 17.5V18a2 2 0 0 0 2 2h1v-2H7v-.58A2.5 2.5 0 0 1 4.5 15a2.5 2.5 0 0 1 .55-1.57A3 3 0 0 0 9 10.17V9h2v1.17a3 3 0 0 0 3.95 2.26A2.5 2.5 0 0 1 19.5 15a2.5 2.5 0 0 1-2.5 2.42V18h-1v2h1a2 2 0 0 0 2-2v-.5a4.5 4.5 0 0 0 .95-8.98A5 5 0 0 0 15 3a4.98 4.98 0 0 0-3 1A4.98 4.98 0 0 0 9 3z"/>
       </svg>
@@ -254,101 +309,149 @@
   </header>
 
   <main>
-    <p class="section-label">Our Products</p>
 
-    <div class="grid">
+    <!-- Vision & Mission -->
+    <p class="section-label">Tầm nhìn &amp; Sứ mệnh</p>
+    <div class="vm-grid">
 
-      <!-- Viceph -->
-      <div class="card">
-        <div class="card-icon" style="background: #0077b6;">
-          <!-- Tooth icon -->
+      <div class="vm-card">
+        <div class="vm-icon">
+          <!-- Eye / vision icon -->
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C9.5 2 8 3.9 6.5 3.9S4 2.5 3 3.5C1 5.5 2 10 3.5 13c.8 1.6 1.2 5 2 6.5.3.6.7 1 1.2 1 .4 0 .7-.2.9-.5L9 17c.5-1 .9-1.5 1.5-1.5h1c.6 0 1 .5 1.5 1.5l1.4 3.5c.2.3.5.5.9.5.5 0 .9-.4 1.2-1 .8-1.5 1.2-4.9 2-6.5C20 10 21 5.5 19 3.5c-1-.9-1.5.4-3 .4C14.5 3.9 14.5 2 12 2z"/>
+            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
           </svg>
         </div>
-        <div>
-          <h2>Viceph</h2>
-          <p class="domain">viceph.net</p>
-          <p class="desc">Nền tảng quản lý phòng khám và phân tích phim sọ mặt trực tuyến cho bác sĩ nha khoa.</p>
-        </div>
-        <a class="visit-btn" href="https://viceph.net" target="_blank" rel="noopener">
-          Visit
-          <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-        </a>
+        <h3>Tầm nhìn / Vision</h3>
+        <p class="vi">Trở thành công ty công nghệ y tế hàng đầu Việt Nam — tiên phong ứng dụng trí tuệ nhân tạo để nâng cao chất lượng chăm sóc sức khỏe.</p>
+        <p class="en">To become Vietnam's leading healthcare technology company — pioneering AI-driven solutions that elevate the standard of patient care.</p>
       </div>
 
-      <!-- Dentilink -->
-      <div class="card">
-        <div class="card-icon" style="background: #00b4d8;">
-          <!-- Link / chain icon -->
+      <div class="vm-card">
+        <div class="vm-icon">
+          <!-- Target / mission icon -->
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 0-10z"/>
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
           </svg>
         </div>
-        <div>
-          <h2>Dentilink</h2>
-          <p class="domain">dentilink.cc</p>
-          <p class="desc">Phần mềm quản lý phòng khám nha khoa đa chi nhánh, kết nối bệnh nhân, nhân viên và quy trình điều trị.</p>
-        </div>
-        <a class="visit-btn" href="https://dentilink.cc" target="_blank" rel="noopener">
-          Visit
-          <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-        </a>
-      </div>
-
-      <!-- 3DCeph -->
-      <div class="card">
-        <div class="card-icon" style="background: #0096c7;">
-          <!-- 3D cube icon -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A1 1 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.32-.19.72-.19 1.14 0l7.9 4.44c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15zM5 15.91l6 3.38v-6.71L5 9.21v6.7zm8 3.38 6-3.38V9.21l-6 3.37v6.71z"/>
-          </svg>
-        </div>
-        <div>
-          <h2>3DCeph</h2>
-          <p class="domain">3d.viceph.net</p>
-          <p class="desc">Phân tích đầu mặt 3D ứng dụng trí tuệ nhân tạo, hỗ trợ lập kế hoạch điều trị chỉnh nha và hàm mặt.</p>
-        </div>
-        <a class="visit-btn" href="https://3d.viceph.net" target="_blank" rel="noopener">
-          Visit
-          <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-        </a>
-      </div>
-
-      <!-- PaperlessMe -->
-      <div class="card">
-        <div class="card-icon" style="background: #48cae4;">
-          <!-- Document / paperless icon -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 17h8v-2H8v2zm0-4h8v-2H8v2zm0-4h5V7H8v2z"/>
-          </svg>
-        </div>
-        <div>
-          <h2>PaperlessMe</h2>
-          <p class="domain">paperless.dentilink.cc</p>
-          <p class="desc">Số hóa phiếu đồng ý và hồ sơ bệnh nhân — xây dựng phòng khám không giấy tờ toàn diện.</p>
-        </div>
-        <a class="visit-btn" href="https://paperless.dentilink.cc" target="_blank" rel="noopener">
-          Visit
-          <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-        </a>
+        <h3>Sứ mệnh / Mission</h3>
+        <p class="vi">Xây dựng các nền tảng số toàn diện, dễ tiếp cận giúp cơ sở y tế vận hành hiệu quả hơn — kết nối bác sĩ, bệnh nhân và quy trình điều trị một cách liền mạch.</p>
+        <p class="en">To build accessible, end-to-end digital platforms that help healthcare providers operate more efficiently — seamlessly connecting doctors, patients, and clinical workflows.</p>
       </div>
 
     </div>
 
+    <!-- Products -->
+    <p class="section-label">Sản phẩm / Our Products</p>
+    <div class="grid">
+
+      <!-- Viceph -->
+      <div class="card">
+        <img class="card-img" src="screenshots/viceph.jpg" alt="Viceph screenshot" loading="lazy" />
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-icon" style="background: #0077b6;">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C9.5 2 8 3.9 6.5 3.9S4 2.5 3 3.5C1 5.5 2 10 3.5 13c.8 1.6 1.2 5 2 6.5.3.6.7 1 1.2 1 .4 0 .7-.2.9-.5L9 17c.5-1 .9-1.5 1.5-1.5h1c.6 0 1 .5 1.5 1.5l1.4 3.5c.2.3.5.5.9.5.5 0 .9-.4 1.2-1 .8-1.5 1.2-4.9 2-6.5C20 10 21 5.5 19 3.5c-1-.9-1.5.4-3 .4C14.5 3.9 14.5 2 12 2z"/>
+              </svg>
+            </div>
+            <div>
+              <h2>Viceph</h2>
+              <p class="domain">viceph.net</p>
+            </div>
+          </div>
+          <p class="desc-vi">Nền tảng quản lý phòng khám và phân tích phim sọ mặt trực tuyến cho bác sĩ nha khoa.</p>
+          <p class="desc-en">Dental clinic management and online cephalometric analysis platform for orthodontists.</p>
+          <a class="visit-btn" href="https://viceph.net" target="_blank" rel="noopener">
+            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Dentilink -->
+      <div class="card">
+        <img class="card-img" src="screenshots/dentilink.jpg" alt="Dentilink screenshot" loading="lazy" />
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-icon" style="background: #00b4d8;">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 0-10z"/>
+              </svg>
+            </div>
+            <div>
+              <h2>Dentilink</h2>
+              <p class="domain">dentilink.cc</p>
+            </div>
+          </div>
+          <p class="desc-vi">Phần mềm quản lý phòng khám nha khoa đa chi nhánh, kết nối bệnh nhân, nhân viên và quy trình điều trị.</p>
+          <p class="desc-en">Multi-tenant dental clinic management SaaS connecting patients, staff, and clinical workflows.</p>
+          <a class="visit-btn" href="https://dentilink.cc" target="_blank" rel="noopener">
+            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- 3DCeph -->
+      <div class="card">
+        <img class="card-img" src="screenshots/3dceph.jpg" alt="3DCeph screenshot" loading="lazy" />
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-icon" style="background: #0096c7;">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A1 1 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.32-.19.72-.19 1.14 0l7.9 4.44c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15zM5 15.91l6 3.38v-6.71L5 9.21v6.7zm8 3.38 6-3.38V9.21l-6 3.37v6.71z"/>
+              </svg>
+            </div>
+            <div>
+              <h2>3DCeph</h2>
+              <p class="domain">3d.viceph.net</p>
+            </div>
+          </div>
+          <p class="desc-vi">Phân tích đầu mặt 3D ứng dụng trí tuệ nhân tạo, hỗ trợ lập kế hoạch điều trị chỉnh nha và hàm mặt.</p>
+          <p class="desc-en">AI-powered 3D cephalometric analysis for orthodontics and maxillofacial treatment planning.</p>
+          <a class="visit-btn" href="https://3d.viceph.net" target="_blank" rel="noopener">
+            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- PaperlessMe -->
+      <div class="card">
+        <img class="card-img" src="screenshots/paperlessme.jpg" alt="PaperlessMe screenshot" loading="lazy" />
+        <div class="card-body">
+          <div class="card-header-row">
+            <div class="card-icon" style="background: #48cae4;">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 17h8v-2H8v2zm0-4h8v-2H8v2zm0-4h5V7H8v2z"/>
+              </svg>
+            </div>
+            <div>
+              <h2>PaperlessMe</h2>
+              <p class="domain">paperless.dentilink.cc</p>
+            </div>
+          </div>
+          <p class="desc-vi">Số hóa phiếu đồng ý và hồ sơ bệnh nhân — xây dựng phòng khám không giấy tờ toàn diện.</p>
+          <p class="desc-en">Digital consent forms and patient paperwork — go fully paperless at the clinic front desk.</p>
+          <a class="visit-btn" href="https://paperless.dentilink.cc" target="_blank" rel="noopener">
+            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Company Info -->
     <div class="company-section">
-      <p class="section-label">Company Information</p>
+      <p class="section-label" style="text-align:left;">Thông tin công ty / Company Information</p>
       <div class="company-grid">
         <div class="info-row">
-          <span class="label">Legal name</span>
+          <span class="label">Tên pháp nhân / Legal name</span>
           <span class="value">CÔNG TY TNHH MEDBRAIN</span>
         </div>
         <div class="info-row">
-          <span class="label">Phone</span>
+          <span class="label">Điện thoại / Phone</span>
           <a class="value" href="tel:+84981724131">098 1724 131</a>
         </div>
         <div class="info-row">
-          <span class="label">Headquarters</span>
+          <span class="label">Trụ sở chính / Headquarters</span>
           <span class="value">Số 4 Ngõ 30 Phố Chùa Vua, phường Phố Huế, quận Hai Bà Trưng, Hà Nội</span>
         </div>
         <div class="info-row">
@@ -356,19 +459,19 @@
           <a class="value" href="mailto:contact@viceph.net">contact@viceph.net</a>
         </div>
         <div class="info-row">
-          <span class="label">Representative office</span>
+          <span class="label">Văn phòng đại diện / Representative office</span>
           <span class="value">Số 93 Trường Chinh, phường Phương Liệt, quận Thanh Xuân, Hà Nội</span>
         </div>
         <div class="info-row">
-          <span class="label">Tax identification number</span>
+          <span class="label">Mã số thuế / Tax ID</span>
           <span class="value">0110142247</span>
         </div>
         <div class="info-row">
-          <span class="label">Issued by</span>
+          <span class="label">Cơ quan cấp / Issued by</span>
           <span class="value">Sở Kế Hoạch Đầu Tư Hà Nội</span>
         </div>
         <div class="info-row">
-          <span class="label">Registration date</span>
+          <span class="label">Ngày cấp / Registration date</span>
           <span class="value">06/10/2022</span>
         </div>
       </div>
