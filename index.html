@@ -3,515 +3,1320 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Medbrain — Healthcare Technology</title>
+  <meta name="description" content="Medbrain builds AI-enabled healthcare technology platforms for clinics, dentists, orthodontists, and patient workflows." />
+  <meta name="theme-color" content="#028fcc" />
+  <title>Medbrain - Healthcare Technology</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700,900" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Paaji" rel="stylesheet" />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
     :root {
-      --navy:   #0d3b6e;
-      --blue:   #0077b6;
-      --teal:   #00b4d8;
-      --light:  #f0f4f8;
-      --border: #cce3f5;
-      --text:   #1a2c3d;
-      --muted:  #5a7a94;
+      --primary: #028fcc;
+      --primary-dark: #0b4e79;
+      --navy: #15395b;
+      --ink: #1f2f43;
+      --muted: #61758c;
+      --line: #dce9f4;
+      --surface: #ffffff;
+      --soft: #f5f9fd;
+      --mint: #22c9b7;
+      --yellow: #ffd45a;
+      --coral: #ff6f61;
+      --green: #6bcf63;
+      --shadow: 0 22px 55px rgba(18, 70, 112, 0.16);
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-      background: var(--light);
-      color: var(--text);
+      margin: 0;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--soft);
     }
 
-    /* ── HERO ── */
-    header {
-      background: var(--navy);
-      padding: 56px 24px 48px;
-      text-align: center;
+    body::selection {
+      background: rgba(34, 201, 183, 0.28);
     }
 
-    .logo-svg {
+    a {
+      color: inherit;
+    }
+
+    img {
       display: block;
-      width: 180px;
-      margin: 0 auto 8px;
+      max-width: 100%;
     }
 
-    .divider {
-      width: 48px;
-      height: 3px;
-      background: var(--teal);
-      border-radius: 2px;
-      margin: 20px auto 0;
+    figure {
+      margin: 0;
     }
 
-    /* ── MAIN ── */
-    main {
-      flex: 1;
-      max-width: 860px;
-      width: 100%;
+    .container {
+      width: min(1120px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 56px 24px;
     }
 
-    .section-label {
-      text-align: center;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--blue);
-      margin-bottom: 28px;
+    .site-nav {
+      position: absolute;
+      inset: 0 0 auto 0;
+      z-index: 10;
+      padding: 22px 0;
+      color: #ffffff;
     }
 
-    /* ── VISION / MISSION ── */
-    .vm-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-bottom: 56px;
-    }
-
-    @media (max-width: 560px) {
-      .vm-grid { grid-template-columns: 1fr; }
-    }
-
-    .vm-card {
-      background: var(--navy);
-      border-radius: 14px;
-      padding: 28px 26px;
-      color: #fff;
-    }
-
-    .vm-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: rgba(255,255,255,0.12);
+    .nav-inner {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
+      justify-content: space-between;
+      gap: 24px;
     }
 
-    .vm-icon svg { width: 22px; height: 22px; fill: var(--teal); }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      min-width: 0;
+    }
 
-    .vm-card h3 {
-      font-size: 1rem;
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 auto;
+    }
+
+    .brand-name {
+      display: block;
+      font-family: "Baloo Paaji", "Nunito", sans-serif;
+      font-size: 1.45rem;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .brand-tag {
+      display: block;
+      margin-top: 3px;
+      font-size: 0.7rem;
       font-weight: 700;
-      color: var(--teal);
-      letter-spacing: 0.3px;
-      margin-bottom: 10px;
+      letter-spacing: 0;
+      color: rgba(255, 255, 255, 0.72);
+      text-transform: uppercase;
     }
 
-    .vm-card .vi {
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.9);
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .nav-links a:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 740px;
+      padding: 170px 0 88px;
+      overflow: hidden;
+      color: #ffffff;
+      background-image:
+        linear-gradient(90deg, rgba(13, 48, 79, 0.96) 0%, rgba(13, 48, 79, 0.82) 43%, rgba(13, 48, 79, 0.2) 76%),
+        url("screenshots/dentilink.jpg");
+      background-size: cover;
+      background-position: top center;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 110px;
+      background: linear-gradient(180deg, rgba(245, 249, 253, 0), var(--soft));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 710px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      font-size: 0.82rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+      color: var(--yellow);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 3px;
+      border-radius: 999px;
+      background: var(--yellow);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: "Baloo Paaji", "Nunito", sans-serif;
+      font-size: 4.6rem;
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .hero-lead {
+      max-width: 640px;
+      margin: 26px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 1.15rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 0 24px;
+      border: 0;
+      border-radius: 999px;
+      box-shadow: 0 14px 28px rgba(15, 55, 88, 0.24);
+      font: inherit;
       font-size: 0.92rem;
-      line-height: 1.6;
-      color: #e0f0fb;
+      font-weight: 900;
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+      cursor: pointer;
     }
 
-    .vm-card .en {
-      font-size: 0.8rem;
-      line-height: 1.55;
-      color: #7bacc8;
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(15, 55, 88, 0.26);
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+      fill: currentColor;
+    }
+
+    .btn-primary {
+      color: var(--navy);
+      background: var(--yellow);
+    }
+
+    .btn-secondary {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.16);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 12px;
+      width: min(620px, 100%);
+      margin-top: 46px;
+    }
+
+    .stat {
+      min-height: 92px;
+      padding: 18px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(8px);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      line-height: 1;
+      color: #ffffff;
+    }
+
+    .stat span {
+      display: block;
       margin-top: 8px;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.82rem;
+      line-height: 1.35;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .section-tight {
+      padding: 72px 0;
+    }
+
+    .crumina-heading {
+      max-width: 760px;
+      margin-bottom: 44px;
+    }
+
+    .align-center {
+      margin-right: auto;
+      margin-left: auto;
+      text-align: center;
+    }
+
+    .heading-sup-title {
+      margin: 0 0 12px;
+      color: var(--primary);
+      font-size: 0.86rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .heading-title {
+      margin: 0;
+      color: var(--navy);
+      font-size: 2.45rem;
+      line-height: 1.13;
+      letter-spacing: 0;
+    }
+
+    .heading-title span {
+      color: var(--primary);
+    }
+
+    .heading-text {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 1.7;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .info-box {
+      position: relative;
+      min-height: 278px;
+      padding: 34px;
+      border-radius: 8px;
+      background: var(--surface);
+      box-shadow: 0 14px 42px rgba(21, 57, 91, 0.09);
+      border: 1px solid rgba(220, 233, 244, 0.82);
+      overflow: hidden;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+      border-color: rgba(2, 143, 204, 0.22);
+    }
+
+    .info-box::after {
+      content: "";
+      position: absolute;
+      right: -42px;
+      bottom: -54px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(2, 143, 204, 0.08);
+    }
+
+    .info-icon {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 66px;
+      height: 66px;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--primary);
+      box-shadow: 0 14px 30px rgba(2, 143, 204, 0.24);
+    }
+
+    .info-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: currentColor;
+    }
+
+    .info-box:nth-child(2) .info-icon {
+      background: var(--mint);
+      box-shadow: 0 14px 30px rgba(34, 201, 183, 0.24);
+    }
+
+    .info-box h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 12px;
+      color: var(--navy);
+      font-size: 1.28rem;
+      line-height: 1.25;
+    }
+
+    .info-box p {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .info-box p + p {
+      margin-top: 10px;
+      font-size: 0.92rem;
+      color: #7a8da0;
       font-style: italic;
     }
 
-    /* ── PRODUCT CARDS ── */
-    .grid {
+    .feature-band {
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      background-color: var(--primary);
+      background-image:
+        linear-gradient(90deg, rgba(2, 143, 204, 0.96) 0%, rgba(2, 143, 204, 0.88) 48%, rgba(2, 143, 204, 0.68) 100%),
+        url("screenshots/3dceph.jpg");
+      background-size: cover;
+      background-position: top center;
+    }
+
+    .feature-layout {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1.05fr);
+      gap: 52px;
+      align-items: center;
+    }
+
+    .feature-band .heading-sup-title,
+    .feature-band .heading-title,
+    .feature-band .heading-text {
+      color: #ffffff;
+    }
+
+    .feature-band .heading-text {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr);
+      gap: 14px;
+      align-items: start;
+    }
+
+    .check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      color: var(--navy);
+      background: var(--yellow);
+    }
+
+    .check svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .feature-item h3 {
+      margin: 0 0 5px;
+      font-size: 1rem;
+    }
+
+    .feature-item p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.55;
+    }
+
+    .screen-stack {
+      position: relative;
+      min-height: 430px;
+    }
+
+    .screen-shot {
+      position: absolute;
+      overflow: hidden;
+      border: 8px solid rgba(255, 255, 255, 0.82);
+      border-radius: 8px;
+      background: #ffffff;
+      box-shadow: 0 30px 70px rgba(12, 49, 82, 0.32);
+    }
+
+    .screen-shot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .screen-main {
+      inset: 8px 0 auto auto;
+      width: 82%;
+      aspect-ratio: 16 / 10;
+    }
+
+    .screen-secondary {
+      left: 0;
+      bottom: 0;
+      width: 54%;
+      aspect-ratio: 16 / 10;
+      border-color: rgba(255, 212, 90, 0.92);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 20px;
     }
 
-    @media (max-width: 520px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
+    .product-card {
       display: flex;
+      min-height: 100%;
       flex-direction: column;
-      transition: box-shadow 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--surface);
+      border: 1px solid rgba(220, 233, 244, 0.9);
+      box-shadow: 0 14px 38px rgba(21, 57, 91, 0.08);
+      transition: transform 160ms ease, box-shadow 160ms ease;
     }
 
-    .card:hover {
-      box-shadow: 0 8px 28px rgba(0, 119, 182, 0.14);
-      border-color: var(--teal);
-      transform: translateY(-3px);
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
     }
 
-    .card-img {
+    .product-media {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #e8f2fa;
+    }
+
+    .product-media img {
       width: 100%;
-      height: 170px;
+      height: 100%;
       object-fit: cover;
       object-position: top center;
-      display: block;
-      border-bottom: 1px solid var(--border);
+      transition: transform 220ms ease;
     }
 
-    .card-body {
-      padding: 22px 22px 24px;
+    .product-card:hover .product-media img {
+      transform: scale(1.035);
+    }
+
+    .product-body {
       display: flex;
-      flex-direction: column;
       flex: 1;
-      gap: 14px;
+      flex-direction: column;
+      padding: 24px;
     }
 
-    .card-header-row {
+    .product-title {
       display: flex;
       align-items: center;
       gap: 12px;
+      margin-bottom: 16px;
     }
 
-    .card-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 9px;
-      flex-shrink: 0;
-      display: flex;
+    .product-icon {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
+      width: 46px;
+      height: 46px;
+      flex: 0 0 auto;
+      border-radius: 8px;
+      color: #ffffff;
+      font-size: 0.86rem;
+      font-weight: 900;
+      background: var(--primary);
     }
 
-    .card-icon svg { width: 22px; height: 22px; fill: #fff; }
-
-    .card h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.2;
+    .product-card:nth-child(2) .product-icon {
+      background: var(--mint);
     }
 
-    .card .domain {
-      font-size: 0.75rem;
+    .product-card:nth-child(3) .product-icon {
+      background: var(--coral);
+    }
+
+    .product-card:nth-child(4) .product-icon {
+      color: var(--navy);
+      background: var(--yellow);
+    }
+
+    .product-title h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.12rem;
+      line-height: 1.1;
+    }
+
+    .domain {
+      margin: 4px 0 0;
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .product-copy {
+      margin: 0 0 12px;
       color: var(--muted);
-      margin-top: 2px;
+      line-height: 1.58;
     }
 
-    .card .desc-vi {
-      font-size: 0.88rem;
-      color: var(--text);
-      line-height: 1.55;
-    }
-
-    .card .desc-en {
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.5;
+    .product-copy.en {
+      color: #7a8da0;
+      font-size: 0.9rem;
       font-style: italic;
     }
 
-    .visit-btn {
+    .product-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 9px 18px;
-      background: var(--blue);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.18s ease;
+      gap: 8px;
+      width: fit-content;
       margin-top: auto;
-      align-self: flex-start;
+      padding-top: 10px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      text-decoration: none;
     }
 
-    .visit-btn:hover { background: #005f8e; }
-    .visit-btn svg { width: 13px; height: 13px; fill: #fff; }
-
-    /* ── COMPANY INFO ── */
-    .company-section {
-      margin-top: 48px;
-      background: #fff;
-      border: 1.5px solid var(--border);
-      border-radius: 14px;
-      padding: 36px 32px;
+    .product-link svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
     }
 
-    .company-section .section-label { text-align: left; margin-bottom: 24px; }
+    .directory-band {
+      background: #ffffff;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .directory-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+      gap: 56px;
+      align-items: start;
+    }
+
+    .leader {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 26px;
+      border-radius: 8px;
+      background: var(--soft);
+      border: 1px solid var(--line);
+    }
+
+    .leader-avatar {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 68px;
+      height: 68px;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      color: #ffffff;
+      background: var(--navy);
+      box-shadow: 0 14px 30px rgba(21, 57, 91, 0.18);
+    }
+
+    .leader-avatar svg {
+      width: 34px;
+      height: 34px;
+      fill: currentColor;
+    }
+
+    .leader h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.18rem;
+    }
+
+    .leader p {
+      margin: 5px 0 0;
+      color: var(--primary);
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .leader a {
+      display: inline-flex;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .leader a:hover {
+      color: var(--primary-dark);
+    }
 
     .company-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px 40px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
     }
 
-    @media (max-width: 600px) {
-      .company-grid { grid-template-columns: 1fr; }
+    .company-item {
+      min-height: 96px;
+      padding: 20px;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--line);
     }
 
-    .info-row { display: flex; flex-direction: column; gap: 2px; }
-
-    .info-row .label {
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+    .company-item span {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--primary);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0;
       text-transform: uppercase;
-      color: var(--blue);
     }
 
-    .info-row .value { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+    .company-item p,
+    .company-item a {
+      margin: 0;
+      color: var(--ink);
+      font-size: 0.95rem;
+      line-height: 1.5;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
 
-    .info-row a.value { color: var(--blue); text-decoration: none; }
-    .info-row a.value:hover { text-decoration: underline; }
+    .company-item a:hover {
+      color: var(--primary-dark);
+    }
 
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 24px;
-      font-size: 0.82rem;
-      color: var(--muted);
-      border-top: 1px solid var(--border);
-      background: #fff;
+    .cta-band {
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      background:
+        linear-gradient(90deg, rgba(21, 57, 91, 0.96), rgba(21, 57, 91, 0.82)),
+        url("screenshots/viceph.jpg");
+      background-size: cover;
+      background-position: top center;
+    }
+
+    .cta-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .cta-content h2 {
+      margin: 0;
+      font-size: 2.1rem;
+      line-height: 1.18;
+    }
+
+    .cta-content p {
+      max-width: 680px;
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+      line-height: 1.65;
+    }
+
+    .site-footer {
+      background: #102f4d;
+      color: rgba(255, 255, 255, 0.78);
+      padding: 30px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.84);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+    }
+
+    @media (max-width: 1060px) {
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .feature-layout,
+      .directory-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .screen-stack {
+        min-height: 390px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .site-nav {
+        padding: 16px 0;
+      }
+
+      .nav-inner {
+        align-items: flex-start;
+      }
+
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+      }
+
+      .brand-name {
+        font-size: 1.2rem;
+      }
+
+      .brand-tag {
+        display: none;
+      }
+
+      .nav-links {
+        gap: 2px;
+      }
+
+      .nav-links a {
+        min-height: 34px;
+        padding: 0 9px;
+        font-size: 0.78rem;
+      }
+
+      .hero {
+        min-height: 680px;
+        padding: 126px 0 70px;
+        background-image:
+          linear-gradient(180deg, rgba(13, 48, 79, 0.94) 0%, rgba(13, 48, 79, 0.86) 58%, rgba(13, 48, 79, 0.36) 100%),
+          url("screenshots/dentilink.jpg");
+        background-position: top center;
+      }
+
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero-lead {
+        font-size: 1rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+        margin-top: 34px;
+      }
+
+      .stat {
+        min-height: 76px;
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .section-tight {
+        padding: 58px 0;
+      }
+
+      .heading-title {
+        font-size: 2rem;
+      }
+
+      .info-grid,
+      .product-grid,
+      .company-grid,
+      .cta-content {
+        grid-template-columns: 1fr;
+      }
+
+      .info-box {
+        min-height: auto;
+        padding: 26px;
+      }
+
+      .feature-layout {
+        gap: 36px;
+      }
+
+      .screen-stack {
+        min-height: 310px;
+      }
+
+      .screen-shot {
+        border-width: 6px;
+      }
+
+      .screen-main {
+        width: 88%;
+      }
+
+      .screen-secondary {
+        width: 62%;
+      }
+
+      .leader {
+        align-items: flex-start;
+        padding: 22px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-inner {
+        gap: 12px;
+      }
+
+      .nav-links a[href="#vision"] {
+        display: none;
+      }
+
+      .hero {
+        min-height: 660px;
+      }
+
+      .hero h1 {
+        font-size: 2.65rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .product-body {
+        padding: 20px;
+      }
+
+      .cta-content h2 {
+        font-size: 1.65rem;
+      }
     }
   </style>
 </head>
+
 <body>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Medbrain home">
+        <svg class="brand-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="60" cy="60" r="56" fill="#ffffff" opacity="0.13" />
+          <path d="M84 28A40 40 0 1 0 26 79" fill="none" stroke="#22c9b7" stroke-width="8" stroke-linecap="round" />
+          <path d="M82 51A28 28 0 1 0 36 77" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" opacity="0.9" />
+          <path d="M70 56A15 15 0 1 0 49 70" fill="none" stroke="#ffd45a" stroke-width="7" stroke-linecap="round" />
+          <circle cx="84" cy="28" r="8" fill="#22c9b7" />
+          <circle cx="26" cy="79" r="8" fill="#22c9b7" />
+          <circle cx="60" cy="60" r="9" fill="#ffd45a" />
+        </svg>
+        <span>
+          <span class="brand-name">medbrain</span>
+          <span class="brand-tag">Healthcare solutions</span>
+        </span>
+      </a>
 
-  <header>
-    <!-- Medbrain logo — circular network icon + wordmark -->
-    <svg class="logo-svg" viewBox="0 0 260 290" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Medbrain">
-      <!-- Icon: concentric arcs with nodes -->
-      <g transform="translate(130,118)">
-        <!-- Outer arc: from ~320° to ~200° (gap at bottom-right) -->
-        <path d="M 47,-65 A 78,78 0 1,0 -68,38"
-              fill="none" stroke="#4EC9C0" stroke-width="9" stroke-linecap="round"/>
-        <!-- Outer nodes -->
-        <circle cx="47"  cy="-65" r="10" fill="#4EC9C0"/>
-        <circle cx="-68" cy="38"  r="10" fill="#4EC9C0"/>
+      <ul class="nav-links">
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#company">Company</a></li>
+      </ul>
+    </div>
+  </nav>
 
-        <!-- Middle arc: from ~340° to ~210° -->
-        <path d="M 52,-18 A 55,55 0 1,0 -46,30"
-              fill="none" stroke="#4EC9C0" stroke-width="9" stroke-linecap="round"/>
-        <!-- Middle nodes -->
-        <circle cx="52"  cy="-18" r="7" fill="#4EC9C0"/>
-        <circle cx="-46" cy="30"  r="7" fill="#4EC9C0"/>
+  <header id="top" class="hero">
+    <div class="container hero-content">
+      <p class="eyebrow">AI-enabled healthcare platforms</p>
+      <h1>Medbrain</h1>
+      <p class="hero-lead">
+        Xây dựng các nền tảng số cho phòng khám, nha khoa, chỉnh nha và quy trình chăm sóc bệnh nhân - từ quản lý vận hành đến phân tích hình ảnh y khoa bằng trí tuệ nhân tạo.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#products">
+          View products
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.42-1.42L16.16 13H4v-2h12.16l-4.58-4.58L13 5z" /></svg>
+        </a>
+        <a class="btn btn-secondary" href="mailto:contact@viceph.net">
+          Contact Medbrain
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z" /></svg>
+        </a>
+      </div>
 
-        <!-- Inner arc: from ~340° to ~210° -->
-        <path d="M 32,-10 A 34,34 0 1,0 -28,19"
-              fill="none" stroke="#4EC9C0" stroke-width="9" stroke-linecap="round"/>
-
-        <!-- Center dot -->
-        <circle cx="0" cy="0" r="13" fill="#4EC9C0"/>
-      </g>
-
-      <!-- Wordmark -->
-      <text x="130" y="222"
-            text-anchor="middle"
-            font-family="'Segoe UI', system-ui, sans-serif"
-            font-size="42" font-weight="800" letter-spacing="-1"
-            fill="#0d3b6e">medbrain</text>
-
-      <!-- Tagline -->
-      <text x="130" y="254"
-            text-anchor="middle"
-            font-family="'Segoe UI', system-ui, sans-serif"
-            font-size="11.5" font-weight="500" letter-spacing="3"
-            fill="#4EC9C0">REDEFINING HEALTHCARE SOLUTIONS</text>
-    </svg>
-
-    <div class="divider"></div>
+      <div class="hero-stats" aria-label="Medbrain highlights">
+        <div class="stat">
+          <strong>4</strong>
+          <span>Healthcare products</span>
+        </div>
+        <div class="stat">
+          <strong>AI</strong>
+          <span>Cephalometric analysis</span>
+        </div>
+        <div class="stat">
+          <strong>VN</strong>
+          <span>Built in Hanoi</span>
+        </div>
+      </div>
+    </div>
   </header>
 
   <main>
-
-    <!-- Vision & Mission -->
-    <p class="section-label">Tầm nhìn &amp; Sứ mệnh</p>
-    <div class="vm-grid">
-
-      <div class="vm-card">
-        <div class="vm-icon">
-          <!-- Eye / vision icon -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
-          </svg>
+    <section id="vision" class="section">
+      <div class="container">
+        <div class="crumina-heading align-center">
+          <p class="heading-sup-title">Tầm nhìn &amp; Sứ mệnh</p>
+          <h2 class="heading-title">Redefining <span>healthcare solutions</span></h2>
+          <p class="heading-text">
+            Medbrain tập trung vào các công cụ thực tế cho bác sĩ, nhân viên phòng khám và bệnh nhân, với giao diện dễ tiếp cận và quy trình vận hành rõ ràng.
+          </p>
         </div>
-        <h3>Tầm nhìn / Vision</h3>
-        <p class="vi">Trở thành công ty công nghệ y tế hàng đầu Việt Nam — tiên phong ứng dụng trí tuệ nhân tạo để nâng cao chất lượng chăm sóc sức khỏe.</p>
-        <p class="en">To become Vietnam's leading healthcare technology company — pioneering AI-driven solutions that elevate the standard of patient care.</p>
-      </div>
 
-      <div class="vm-card">
-        <div class="vm-icon">
-          <!-- Target / mission icon -->
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-12c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-          </svg>
-        </div>
-        <h3>Sứ mệnh / Mission</h3>
-        <p class="vi">Xây dựng các nền tảng số toàn diện, dễ tiếp cận giúp cơ sở y tế vận hành hiệu quả hơn — kết nối bác sĩ, bệnh nhân và quy trình điều trị một cách liền mạch.</p>
-        <p class="en">To build accessible, end-to-end digital platforms that help healthcare providers operate more efficiently — seamlessly connecting doctors, patients, and clinical workflows.</p>
-      </div>
-
-    </div>
-
-    <!-- Products -->
-    <p class="section-label">Sản phẩm / Our Products</p>
-    <div class="grid">
-
-      <!-- Viceph -->
-      <div class="card">
-        <img class="card-img" src="screenshots/viceph.jpg" alt="Viceph screenshot" loading="lazy" />
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon" style="background: #0077b6;">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2C9.5 2 8 3.9 6.5 3.9S4 2.5 3 3.5C1 5.5 2 10 3.5 13c.8 1.6 1.2 5 2 6.5.3.6.7 1 1.2 1 .4 0 .7-.2.9-.5L9 17c.5-1 .9-1.5 1.5-1.5h1c.6 0 1 .5 1.5 1.5l1.4 3.5c.2.3.5.5.9.5.5 0 .9-.4 1.2-1 .8-1.5 1.2-4.9 2-6.5C20 10 21 5.5 19 3.5c-1-.9-1.5.4-3 .4C14.5 3.9 14.5 2 12 2z"/>
-              </svg>
+        <div class="info-grid">
+          <article class="info-box">
+            <div class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 .01 6.01A3 3 0 0 0 12 9z" /></svg>
             </div>
-            <div>
-              <h2>Viceph</h2>
-              <p class="domain">viceph.net</p>
+            <h3>Tầm nhìn / Vision</h3>
+            <p>Trở thành công ty công nghệ y tế hàng đầu Việt Nam, tiên phong ứng dụng trí tuệ nhân tạo để nâng cao chất lượng chăm sóc sức khỏe.</p>
+            <p>To become Vietnam's leading healthcare technology company, pioneering AI-driven solutions that elevate patient care.</p>
+          </article>
+
+          <article class="info-box">
+            <div class="info-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8V2zm1 1v9h9a9 9 0 0 0-9-9zm2 2.34A7.03 7.03 0 0 1 19.66 10H15V5.34zM12 7a5 5 0 1 0 5 5h-2a3 3 0 1 1-3-3V7z" /></svg>
             </div>
-          </div>
-          <p class="desc-vi">Nền tảng quản lý phòng khám và phân tích phim sọ mặt trực tuyến cho bác sĩ nha khoa.</p>
-          <p class="desc-en">Dental clinic management and online cephalometric analysis platform for orthodontists.</p>
-          <a class="visit-btn" href="https://viceph.net" target="_blank" rel="noopener">
-            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-          </a>
+            <h3>Sứ mệnh / Mission</h3>
+            <p>Xây dựng các nền tảng số toàn diện, dễ tiếp cận giúp cơ sở y tế vận hành hiệu quả hơn, kết nối bác sĩ, bệnh nhân và quy trình điều trị.</p>
+            <p>To build accessible digital platforms that help healthcare providers operate efficiently and connect clinical workflows.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Dentilink -->
-      <div class="card">
-        <img class="card-img" src="screenshots/dentilink.jpg" alt="Dentilink screenshot" loading="lazy" />
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon" style="background: #00b4d8;">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0 0 10h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1 0 1.71-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 0-10z"/>
-              </svg>
-            </div>
-            <div>
-              <h2>Dentilink</h2>
-              <p class="domain">dentilink.cc</p>
-            </div>
-          </div>
-          <p class="desc-vi">Phần mềm quản lý phòng khám nha khoa đa chi nhánh, kết nối bệnh nhân, nhân viên và quy trình điều trị.</p>
-          <p class="desc-en">Multi-tenant dental clinic management SaaS connecting patients, staff, and clinical workflows.</p>
-          <a class="visit-btn" href="https://dentilink.cc" target="_blank" rel="noopener">
-            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- 3DCeph -->
-      <div class="card">
-        <img class="card-img" src="screenshots/3dceph.jpg" alt="3DCeph screenshot" loading="lazy" />
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon" style="background: #0096c7;">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18-.21 0-.41-.06-.57-.18l-7.9-4.44A1 1 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.32-.19.72-.19 1.14 0l7.9 4.44c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15zM5 15.91l6 3.38v-6.71L5 9.21v6.7zm8 3.38 6-3.38V9.21l-6 3.37v6.71z"/>
-              </svg>
-            </div>
-            <div>
-              <h2>3DCeph</h2>
-              <p class="domain">3d.viceph.net</p>
-            </div>
-          </div>
-          <p class="desc-vi">Phân tích đầu mặt 3D ứng dụng trí tuệ nhân tạo, hỗ trợ lập kế hoạch điều trị chỉnh nha và hàm mặt.</p>
-          <p class="desc-en">AI-powered 3D cephalometric analysis for orthodontics and maxillofacial treatment planning.</p>
-          <a class="visit-btn" href="https://3d.viceph.net" target="_blank" rel="noopener">
-            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- PaperlessMe -->
-      <div class="card">
-        <img class="card-img" src="screenshots/paperlessme.jpg" alt="PaperlessMe screenshot" loading="lazy" />
-        <div class="card-body">
-          <div class="card-header-row">
-            <div class="card-icon" style="background: #48cae4;">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 17h8v-2H8v2zm0-4h8v-2H8v2zm0-4h5V7H8v2z"/>
-              </svg>
-            </div>
-            <div>
-              <h2>PaperlessMe</h2>
-              <p class="domain">paperless.dentilink.cc</p>
-            </div>
-          </div>
-          <p class="desc-vi">Số hóa phiếu đồng ý và hồ sơ bệnh nhân — xây dựng phòng khám không giấy tờ toàn diện.</p>
-          <p class="desc-en">Digital consent forms and patient paperwork — go fully paperless at the clinic front desk.</p>
-          <a class="visit-btn" href="https://paperless.dentilink.cc" target="_blank" rel="noopener">
-            Visit <svg viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z"/></svg>
-          </a>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Leadership -->
-    <div class="company-section" style="margin-top:24px;">
-      <p class="section-label" style="text-align:left;">Ban lãnh đạo / Leadership</p>
-      <div style="display:flex; align-items:center; gap:18px;">
-        <div style="width:52px;height:52px;border-radius:50%;background:var(--navy);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-          <svg viewBox="0 0 24 24" style="width:26px;height:26px;fill:#fff;" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/>
-          </svg>
-        </div>
+    <section class="section feature-band">
+      <div class="container feature-layout">
         <div>
-          <div style="font-size:1.05rem;font-weight:700;color:var(--text);">Nguyễn Anh Tuấn</div>
-          <div style="font-size:0.85rem;color:var(--teal);font-weight:600;margin-top:2px;">CEO, Professional Director</div>
-          <a href="mailto:tuannguyen@medbrainlab.com" style="font-size:0.85rem;color:var(--blue);text-decoration:none;margin-top:4px;display:inline-block;">tuannguyen@medbrainlab.com</a>
+          <div class="crumina-heading">
+            <p class="heading-sup-title">Clinical workflow</p>
+            <h2 class="heading-title">Built for the front desk, the chairside, and the treatment plan.</h2>
+            <p class="heading-text">
+              The product suite connects scheduling, patient records, dental operations, consent forms, and cephalometric analysis into a focused digital workflow.
+            </p>
+          </div>
+
+          <div class="feature-list">
+            <div class="feature-item">
+              <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" /></svg></span>
+              <div>
+                <h3>Clinic operations</h3>
+                <p>Multi-branch patient, staff, appointment, and treatment workflows for dental clinics.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" /></svg></span>
+              <div>
+                <h3>AI analysis</h3>
+                <p>2D and 3D cephalometric analysis tools for orthodontic planning.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" /></svg></span>
+              <div>
+                <h3>Paperless intake</h3>
+                <p>Digital consent and patient paperwork for clinics moving away from manual forms.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="screen-stack" aria-label="Medbrain product screenshots">
+          <figure class="screen-shot screen-main">
+            <img src="screenshots/3dceph.jpg" alt="3DCeph product interface" loading="lazy" />
+          </figure>
+          <figure class="screen-shot screen-secondary">
+            <img src="screenshots/paperlessme.jpg" alt="PaperlessMe product interface" loading="lazy" />
+          </figure>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Company Info -->
-    <div class="company-section" style="margin-top:16px;">
-      <p class="section-label" style="text-align:left;">Thông tin công ty / Company Information</p>
-      <div class="company-grid">
-        <div class="info-row">
-          <span class="label">Tên pháp nhân / Legal name</span>
-          <span class="value">CÔNG TY TNHH MEDBRAIN</span>
+    <section id="products" class="section">
+      <div class="container">
+        <div class="crumina-heading align-center">
+          <p class="heading-sup-title">Sản phẩm / Our products</p>
+          <h2 class="heading-title">Platforms for modern <span>healthcare teams</span></h2>
+          <p class="heading-text">
+            A practical product family spanning dental clinic management, cephalometric analysis, and paperless patient workflows.
+          </p>
         </div>
-        <div class="info-row">
-          <span class="label">Điện thoại / Phone</span>
-          <a class="value" href="tel:+84981724131">098 1724 131</a>
-        </div>
-        <div class="info-row">
-          <span class="label">Trụ sở chính / Headquarters</span>
-          <span class="value">Số 4 Ngõ 30 Phố Chùa Vua, phường Phố Huế, quận Hai Bà Trưng, Hà Nội</span>
-        </div>
-        <div class="info-row">
-          <span class="label">Email</span>
-          <a class="value" href="mailto:contact@viceph.net">contact@viceph.net</a>
-        </div>
-        <div class="info-row">
-          <span class="label">Văn phòng đại diện / Representative office</span>
-          <span class="value">Số 93 Trường Chinh, phường Phương Liệt, quận Thanh Xuân, Hà Nội</span>
-        </div>
-        <div class="info-row">
-          <span class="label">Mã số thuế / Tax ID</span>
-          <span class="value">0110142247</span>
-        </div>
-        <div class="info-row">
-          <span class="label">Cơ quan cấp / Issued by</span>
-          <span class="value">Sở Kế Hoạch Đầu Tư Hà Nội</span>
-        </div>
-        <div class="info-row">
-          <span class="label">Ngày cấp / Registration date</span>
-          <span class="value">06/10/2022</span>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-media">
+              <img src="screenshots/viceph.jpg" alt="Viceph screenshot" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-title">
+                <span class="product-icon">Vi</span>
+                <div>
+                  <h3>Viceph</h3>
+                  <p class="domain">viceph.net</p>
+                </div>
+              </div>
+              <p class="product-copy">Nền tảng quản lý phòng khám và phân tích phim sọ mặt trực tuyến cho bác sĩ nha khoa.</p>
+              <p class="product-copy en">Dental clinic management and online cephalometric analysis platform for orthodontists.</p>
+              <a class="product-link" href="https://viceph.net" target="_blank" rel="noopener">
+                Visit product
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="screenshots/dentilink.jpg" alt="Dentilink screenshot" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-title">
+                <span class="product-icon">De</span>
+                <div>
+                  <h3>Dentilink</h3>
+                  <p class="domain">dentilink.cc</p>
+                </div>
+              </div>
+              <p class="product-copy">Phần mềm quản lý phòng khám nha khoa đa chi nhánh, kết nối bệnh nhân, nhân viên và quy trình điều trị.</p>
+              <p class="product-copy en">Multi-tenant dental clinic management SaaS connecting patients, staff, and clinical workflows.</p>
+              <a class="product-link" href="https://dentilink.cc" target="_blank" rel="noopener">
+                Visit product
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="screenshots/3dceph.jpg" alt="3DCeph screenshot" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-title">
+                <span class="product-icon">3D</span>
+                <div>
+                  <h3>3DCeph</h3>
+                  <p class="domain">3d.viceph.net</p>
+                </div>
+              </div>
+              <p class="product-copy">Phân tích đầu mặt 3D ứng dụng trí tuệ nhân tạo, hỗ trợ lập kế hoạch điều trị chỉnh nha và hàm mặt.</p>
+              <p class="product-copy en">AI-powered 3D cephalometric analysis for orthodontics and maxillofacial treatment planning.</p>
+              <a class="product-link" href="https://3d.viceph.net" target="_blank" rel="noopener">
+                Visit product
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="screenshots/paperlessme.jpg" alt="PaperlessMe screenshot" loading="lazy" />
+            </div>
+            <div class="product-body">
+              <div class="product-title">
+                <span class="product-icon">Pa</span>
+                <div>
+                  <h3>PaperlessMe</h3>
+                  <p class="domain">paperless.dentilink.cc</p>
+                </div>
+              </div>
+              <p class="product-copy">Số hóa phiếu đồng ý và hồ sơ bệnh nhân, xây dựng phòng khám không giấy tờ toàn diện.</p>
+              <p class="product-copy en">Digital consent forms and patient paperwork for a paperless clinic front desk.</p>
+              <a class="product-link" href="https://paperless.dentilink.cc" target="_blank" rel="noopener">
+                Visit product
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
+              </a>
+            </div>
+          </article>
         </div>
       </div>
-    </div>
+    </section>
 
+    <section id="company" class="section directory-band">
+      <div class="container directory-layout">
+        <div>
+          <div class="crumina-heading">
+            <p class="heading-sup-title">Leadership</p>
+            <h2 class="heading-title">Ban lãnh đạo</h2>
+            <p class="heading-text">
+              Medbrain is led from Hanoi with a focus on practical healthcare software for clinics and specialists.
+            </p>
+          </div>
+
+          <div class="leader">
+            <span class="leader-avatar" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z" /></svg>
+            </span>
+            <div>
+              <h3>Nguyễn Anh Tuấn</h3>
+              <p>CEO, Professional Director</p>
+              <a href="mailto:tuannguyen@medbrainlab.com">tuannguyen@medbrainlab.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="crumina-heading">
+            <p class="heading-sup-title">Thông tin công ty</p>
+            <h2 class="heading-title">Company information</h2>
+          </div>
+
+          <div class="company-grid">
+            <div class="company-item">
+              <span>Tên pháp nhân / Legal name</span>
+              <p>CÔNG TY TNHH MEDBRAIN</p>
+            </div>
+            <div class="company-item">
+              <span>Điện thoại / Phone</span>
+              <a href="tel:+84981724131">098 1724 131</a>
+            </div>
+            <div class="company-item">
+              <span>Trụ sở chính / Headquarters</span>
+              <p>Số 4 Ngõ 30 Phố Chùa Vua, phường Phố Huế, quận Hai Bà Trưng, Hà Nội</p>
+            </div>
+            <div class="company-item">
+              <span>Email</span>
+              <a href="mailto:contact@viceph.net">contact@viceph.net</a>
+            </div>
+            <div class="company-item">
+              <span>Văn phòng đại diện / Representative office</span>
+              <p>Số 93 Trường Chinh, phường Phương Liệt, quận Thanh Xuân, Hà Nội</p>
+            </div>
+            <div class="company-item">
+              <span>Mã số thuế / Tax ID</span>
+              <p>0110142247</p>
+            </div>
+            <div class="company-item">
+              <span>Cơ quan cấp / Issued by</span>
+              <p>Sở Kế Hoạch Đầu Tư Hà Nội</p>
+            </div>
+            <div class="company-item">
+              <span>Ngày cấp / Registration date</span>
+              <p>06/10/2022</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight cta-band">
+      <div class="container cta-content">
+        <div>
+          <h2>Healthcare workflows, built as focused software.</h2>
+          <p>
+            Explore the Medbrain product family or contact the team for clinic management, paperless intake, and cephalometric analysis solutions.
+          </p>
+        </div>
+        <a class="btn btn-primary" href="mailto:contact@viceph.net">
+          Get in touch
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.42-1.42L16.16 13H4v-2h12.16l-4.58-4.58L13 5z" /></svg>
+        </a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    &copy; 2025 Medbrain. All rights reserved.
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>&copy; 2026 Medbrain. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="https://viceph.net" target="_blank" rel="noopener">Viceph</a>
+        <a href="https://dentilink.cc" target="_blank" rel="noopener">Dentilink</a>
+        <a href="https://3d.viceph.net" target="_blank" rel="noopener">3DCeph</a>
+        <a href="https://paperless.dentilink.cc" target="_blank" rel="noopener">PaperlessMe</a>
+      </div>
+    </div>
   </footer>
-
 </body>
 </html>
