@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">PaperlessMe form preview</title>
+  <desc id="desc">A paperless patient intake and consent workflow with forms, signed documents, and document status cards.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff8db"/>
+      <stop offset="0.52" stop-color="#f7fbff"/>
+      <stop offset="1" stop-color="#e7fbf7"/>
+    </linearGradient>
+    <linearGradient id="button" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffd45a"/>
+      <stop offset="1" stop-color="#0589c6"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="28" stdDeviation="35" flood-color="#123d63" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <circle cx="218" cy="172" r="188" fill="#ffd45a" opacity="0.18"/>
+  <circle cx="1322" cy="820" r="238" fill="#24c7b4" opacity="0.13"/>
+  <g filter="url(#shadow)">
+    <rect x="236" y="126" width="1128" height="748" rx="38" fill="#ffffff"/>
+    <rect x="236" y="126" width="1128" height="84" rx="38" fill="#0c3150"/>
+    <rect x="236" y="174" width="1128" height="36" fill="#0c3150"/>
+    <circle cx="290" cy="167" r="12" fill="#ff6961"/>
+    <circle cx="328" cy="167" r="12" fill="#ffd45a"/>
+    <circle cx="366" cy="167" r="12" fill="#24c7b4"/>
+    <text x="430" y="180" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="27" font-weight="900">PaperlessMe</text>
+    <rect x="1058" y="150" width="210" height="30" rx="15" fill="#ffffff" opacity="0.15"/>
+    <g transform="translate(306 270)">
+      <rect width="540" height="524" rx="34" fill="#f7fbff" stroke="#d8e7f1" stroke-width="2"/>
+      <text x="44" y="62" fill="#102f4d" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="900">Patient intake</text>
+      <text x="44" y="100" fill="#6d8196" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700">Consent and documents</text>
+      <rect x="44" y="146" width="452" height="62" rx="20" fill="#ffffff" stroke="#d8e7f1" stroke-width="2"/>
+      <rect x="78" y="170" width="132" height="15" rx="8" fill="#0c3150" opacity="0.18"/>
+      <rect x="44" y="234" width="452" height="62" rx="20" fill="#ffffff" stroke="#d8e7f1" stroke-width="2"/>
+      <rect x="78" y="258" width="188" height="15" rx="8" fill="#0c3150" opacity="0.18"/>
+      <rect x="44" y="322" width="452" height="62" rx="20" fill="#ffffff" stroke="#d8e7f1" stroke-width="2"/>
+      <rect x="78" y="346" width="152" height="15" rx="8" fill="#0c3150" opacity="0.18"/>
+      <rect x="44" y="424" width="210" height="58" rx="22" fill="url(#button)"/>
+      <text x="88" y="460" fill="#ffffff" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="900">Submit</text>
+    </g>
+    <g transform="translate(900 250)">
+      <rect width="320" height="554" rx="46" fill="#102f4d"/>
+      <rect x="24" y="34" width="272" height="486" rx="30" fill="#f7fbff"/>
+      <rect x="104" y="16" width="112" height="10" rx="5" fill="#ffffff" opacity="0.3"/>
+      <text x="64" y="96" fill="#102f4d" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="900">Consent</text>
+      <rect x="64" y="130" width="192" height="12" rx="6" fill="#0c3150" opacity="0.17"/>
+      <rect x="64" y="164" width="156" height="12" rx="6" fill="#0c3150" opacity="0.13"/>
+      <rect x="64" y="214" width="192" height="118" rx="22" fill="#ffffff" stroke="#d8e7f1" stroke-width="2"/>
+      <path d="M92 286C118 250 136 318 166 276C184 250 206 282 230 256" fill="none" stroke="#0589c6" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="64" y="372" width="192" height="50" rx="18" fill="#ffd45a"/>
+      <text x="112" y="404" fill="#102f4d" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="900">Signed</text>
+    </g>
+    <g transform="translate(1088 560)">
+      <rect width="226" height="146" rx="28" fill="#ffffff" stroke="#d8e7f1" stroke-width="2"/>
+      <circle cx="54" cy="54" r="28" fill="#24c7b4"/>
+      <path d="M40 54L50 65L70 42" fill="none" stroke="#ffffff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="96" y="38" width="84" height="14" rx="7" fill="#0c3150" opacity="0.18"/>
+      <rect x="96" y="70" width="104" height="12" rx="6" fill="#0c3150" opacity="0.12"/>
+    </g>
+  </g>
+</svg>
