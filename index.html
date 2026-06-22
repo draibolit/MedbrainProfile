@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="vi" class="lang-vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Medbrain builds AI-enabled healthcare technology platforms for clinics, dentists, orthodontists, and patient workflows." />
+  <meta name="description" content="Medbrain xây dựng các nền tảng công nghệ y tế ứng dụng AI cho phòng khám, nha khoa, chỉnh nha và quy trình chăm sóc bệnh nhân." />
   <meta name="theme-color" content="#028fcc" />
-  <title>Medbrain - Healthcare Technology</title>
+  <title>Medbrain - Công nghệ y tế</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -60,6 +60,22 @@
 
     figure {
       margin: 0;
+    }
+
+    [data-lang="vi"] {
+      display: inline !important;
+    }
+
+    [data-lang="en"] {
+      display: none !important;
+    }
+
+    html.lang-en [data-lang="vi"] {
+      display: none !important;
+    }
+
+    html.lang-en [data-lang="en"] {
+      display: inline !important;
     }
 
     .container {
@@ -140,6 +156,48 @@
     .nav-links a:hover {
       background: rgba(255, 255, 255, 0.16);
       color: #ffffff;
+    }
+
+    .nav-tools {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 2px;
+      padding: 3px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.24);
+    }
+
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 38px;
+      min-height: 32px;
+      padding: 0 10px;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.78);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease;
+    }
+
+    .lang-btn[aria-pressed="true"] {
+      color: var(--navy);
+      background: #ffffff;
     }
 
     .hero {
@@ -322,7 +380,11 @@
       letter-spacing: 0;
     }
 
-    .heading-title span {
+    .heading-title > span {
+      color: inherit;
+    }
+
+    .heading-title > span > span {
       color: var(--primary);
     }
 
@@ -756,6 +818,87 @@
       color: var(--primary-dark);
     }
 
+    .social-section {
+      background: var(--soft);
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) repeat(2, minmax(0, 0.95fr));
+      gap: 20px;
+    }
+
+    .social-card {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #ffffff;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 38px rgba(21, 57, 91, 0.08);
+    }
+
+    .social-media {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #e8f2fa;
+    }
+
+    .social-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .social-body {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      padding: 24px;
+    }
+
+    .social-kicker {
+      margin: 0 0 8px;
+      color: var(--primary);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .social-card h3 {
+      margin: 0;
+      color: var(--navy);
+      font-size: 1.18rem;
+      line-height: 1.25;
+    }
+
+    .social-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.62;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+      margin-top: auto;
+      padding-top: 18px;
+      color: var(--primary-dark);
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .social-link svg {
+      width: 15px;
+      height: 15px;
+      fill: currentColor;
+    }
+
     .cta-band {
       position: relative;
       overflow: hidden;
@@ -844,6 +987,10 @@
         align-items: flex-start;
       }
 
+      .nav-tools {
+        gap: 8px;
+      }
+
       .brand-mark {
         width: 42px;
         height: 42px;
@@ -865,6 +1012,17 @@
         min-height: 34px;
         padding: 0 9px;
         font-size: 0.78rem;
+      }
+
+      .language-switch {
+        padding: 2px;
+      }
+
+      .lang-btn {
+        min-width: 34px;
+        min-height: 30px;
+        padding: 0 8px;
+        font-size: 0.74rem;
       }
 
       .hero {
@@ -908,6 +1066,7 @@
       .info-grid,
       .product-grid,
       .company-grid,
+      .social-grid,
       .cta-content {
         grid-template-columns: 1fr;
       }
@@ -953,6 +1112,10 @@
         gap: 12px;
       }
 
+      .nav-tools {
+        gap: 6px;
+      }
+
       .nav-links a[href="#vision"] {
         display: none;
       }
@@ -985,9 +1148,9 @@
 </head>
 
 <body>
-  <nav class="site-nav" aria-label="Primary navigation">
+  <nav class="site-nav" aria-label="Điều hướng chính" data-label-vi="Điều hướng chính" data-label-en="Primary navigation">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Medbrain home">
+      <a class="brand" href="#top" aria-label="Trang chủ Medbrain" data-label-vi="Trang chủ Medbrain" data-label-en="Medbrain home">
         <svg class="brand-mark" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <circle cx="60" cy="60" r="56" fill="#ffffff" opacity="0.13" />
           <path d="M84 28A40 40 0 1 0 26 79" fill="none" stroke="#22c9b7" stroke-width="8" stroke-linecap="round" />
@@ -999,48 +1162,63 @@
         </svg>
         <span>
           <span class="brand-name">medbrain</span>
-          <span class="brand-tag">Healthcare solutions</span>
+          <span class="brand-tag">
+            <span data-lang="vi">Giải pháp y tế</span>
+            <span data-lang="en">Healthcare solutions</span>
+          </span>
         </span>
       </a>
 
-      <ul class="nav-links">
-        <li><a href="#vision">Vision</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#company">Company</a></li>
-      </ul>
+      <div class="nav-tools">
+        <ul class="nav-links">
+          <li><a href="#vision"><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></a></li>
+          <li><a href="#products"><span data-lang="vi">Sản phẩm</span><span data-lang="en">Products</span></a></li>
+          <li><a href="#company"><span data-lang="vi">Công ty</span><span data-lang="en">Company</span></a></li>
+        </ul>
+        <div class="language-switch" role="group" aria-label="Ngôn ngữ" data-label-vi="Ngôn ngữ" data-label-en="Language">
+          <button class="lang-btn" type="button" data-set-lang="vi" aria-pressed="true">VI</button>
+          <button class="lang-btn" type="button" data-set-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
     </div>
   </nav>
 
   <header id="top" class="hero">
     <div class="container hero-content">
-      <p class="eyebrow">AI-enabled healthcare platforms</p>
+      <p class="eyebrow">
+        <span data-lang="vi">Nền tảng y tế ứng dụng AI</span>
+        <span data-lang="en">AI-enabled healthcare platforms</span>
+      </p>
       <h1>Medbrain</h1>
       <p class="hero-lead">
-        Xây dựng các nền tảng số cho phòng khám, nha khoa, chỉnh nha và quy trình chăm sóc bệnh nhân - từ quản lý vận hành đến phân tích hình ảnh y khoa bằng trí tuệ nhân tạo.
+        <span data-lang="vi">Xây dựng các nền tảng số cho phòng khám, nha khoa, chỉnh nha và quy trình chăm sóc bệnh nhân - từ quản lý vận hành đến phân tích hình ảnh y khoa bằng trí tuệ nhân tạo.</span>
+        <span data-lang="en">Building digital platforms for clinics, dentistry, orthodontics, and patient care workflows - from daily operations to AI-assisted medical image analysis.</span>
       </p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#products">
-          View products
+          <span data-lang="vi">Xem sản phẩm</span>
+          <span data-lang="en">View products</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.42-1.42L16.16 13H4v-2h12.16l-4.58-4.58L13 5z" /></svg>
         </a>
         <a class="btn btn-secondary" href="mailto:contact@viceph.net">
-          Contact Medbrain
+          <span data-lang="vi">Liên hệ Medbrain</span>
+          <span data-lang="en">Contact Medbrain</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z" /></svg>
         </a>
       </div>
 
-      <div class="hero-stats" aria-label="Medbrain highlights">
+      <div class="hero-stats" aria-label="Điểm nổi bật của Medbrain" data-label-vi="Điểm nổi bật của Medbrain" data-label-en="Medbrain highlights">
         <div class="stat">
           <strong>4</strong>
-          <span>Healthcare products</span>
+          <span><span data-lang="vi">Sản phẩm y tế</span><span data-lang="en">Healthcare products</span></span>
         </div>
         <div class="stat">
           <strong>AI</strong>
-          <span>Cephalometric analysis</span>
+          <span><span data-lang="vi">Phân tích sọ mặt</span><span data-lang="en">Cephalometric analysis</span></span>
         </div>
         <div class="stat">
           <strong>VN</strong>
-          <span>Built in Hanoi</span>
+          <span><span data-lang="vi">Phát triển tại Hà Nội</span><span data-lang="en">Built in Hanoi</span></span>
         </div>
       </div>
     </div>
@@ -1050,10 +1228,17 @@
     <section id="vision" class="section">
       <div class="container">
         <div class="crumina-heading align-center">
-          <p class="heading-sup-title">Tầm nhìn &amp; Sứ mệnh</p>
-          <h2 class="heading-title">Redefining <span>healthcare solutions</span></h2>
+          <p class="heading-sup-title">
+            <span data-lang="vi">Tầm nhìn &amp; Sứ mệnh</span>
+            <span data-lang="en">Vision &amp; Mission</span>
+          </p>
+          <h2 class="heading-title">
+            <span data-lang="vi">Định nghĩa lại <span>giải pháp chăm sóc sức khỏe</span></span>
+            <span data-lang="en">Redefining <span>healthcare solutions</span></span>
+          </h2>
           <p class="heading-text">
-            Medbrain tập trung vào các công cụ thực tế cho bác sĩ, nhân viên phòng khám và bệnh nhân, với giao diện dễ tiếp cận và quy trình vận hành rõ ràng.
+            <span data-lang="vi">Medbrain tập trung vào các công cụ thực tế cho bác sĩ, nhân viên phòng khám và bệnh nhân, với giao diện dễ tiếp cận và quy trình vận hành rõ ràng.</span>
+            <span data-lang="en">Medbrain focuses on practical tools for doctors, clinic staff, and patients, with accessible interfaces and clear operational workflows.</span>
           </p>
         </div>
 
@@ -1062,18 +1247,22 @@
             <div class="info-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 .01 6.01A3 3 0 0 0 12 9z" /></svg>
             </div>
-            <h3>Tầm nhìn / Vision</h3>
-            <p>Trở thành công ty công nghệ y tế hàng đầu Việt Nam, tiên phong ứng dụng trí tuệ nhân tạo để nâng cao chất lượng chăm sóc sức khỏe.</p>
-            <p>To become Vietnam's leading healthcare technology company, pioneering AI-driven solutions that elevate patient care.</p>
+            <h3><span data-lang="vi">Tầm nhìn</span><span data-lang="en">Vision</span></h3>
+            <p>
+              <span data-lang="vi">Trở thành công ty công nghệ y tế hàng đầu Việt Nam, tiên phong ứng dụng trí tuệ nhân tạo để nâng cao chất lượng chăm sóc sức khỏe.</span>
+              <span data-lang="en">To become Vietnam's leading healthcare technology company, pioneering AI-driven solutions that elevate patient care.</span>
+            </p>
           </article>
 
           <article class="info-box">
             <div class="info-icon" aria-hidden="true">
               <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10h-2a8 8 0 1 1-8-8V2zm1 1v9h9a9 9 0 0 0-9-9zm2 2.34A7.03 7.03 0 0 1 19.66 10H15V5.34zM12 7a5 5 0 1 0 5 5h-2a3 3 0 1 1-3-3V7z" /></svg>
             </div>
-            <h3>Sứ mệnh / Mission</h3>
-            <p>Xây dựng các nền tảng số toàn diện, dễ tiếp cận giúp cơ sở y tế vận hành hiệu quả hơn, kết nối bác sĩ, bệnh nhân và quy trình điều trị.</p>
-            <p>To build accessible digital platforms that help healthcare providers operate efficiently and connect clinical workflows.</p>
+            <h3><span data-lang="vi">Sứ mệnh</span><span data-lang="en">Mission</span></h3>
+            <p>
+              <span data-lang="vi">Xây dựng các nền tảng số toàn diện, dễ tiếp cận giúp cơ sở y tế vận hành hiệu quả hơn, kết nối bác sĩ, bệnh nhân và quy trình điều trị.</span>
+              <span data-lang="en">To build accessible digital platforms that help healthcare providers operate efficiently and connect clinical workflows.</span>
+            </p>
           </article>
         </div>
       </div>
@@ -1083,10 +1272,17 @@
       <div class="container feature-layout">
         <div>
           <div class="crumina-heading">
-            <p class="heading-sup-title">Clinical workflow</p>
-            <h2 class="heading-title">Built for the front desk, the chairside, and the treatment plan.</h2>
+            <p class="heading-sup-title">
+              <span data-lang="vi">Quy trình lâm sàng</span>
+              <span data-lang="en">Clinical workflow</span>
+            </p>
+            <h2 class="heading-title">
+              <span data-lang="vi">Xây dựng cho quầy lễ tân, ghế điều trị và kế hoạch điều trị.</span>
+              <span data-lang="en">Built for the front desk, the chairside, and the treatment plan.</span>
+            </h2>
             <p class="heading-text">
-              The product suite connects scheduling, patient records, dental operations, consent forms, and cephalometric analysis into a focused digital workflow.
+              <span data-lang="vi">Bộ sản phẩm kết nối lịch hẹn, hồ sơ bệnh nhân, vận hành nha khoa, phiếu đồng ý và phân tích sọ mặt vào một quy trình số tập trung.</span>
+              <span data-lang="en">The product suite connects scheduling, patient records, dental operations, consent forms, and cephalometric analysis into a focused digital workflow.</span>
             </p>
           </div>
 
@@ -1094,33 +1290,33 @@
             <div class="feature-item">
               <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" /></svg></span>
               <div>
-                <h3>Clinic operations</h3>
-                <p>Multi-branch patient, staff, appointment, and treatment workflows for dental clinics.</p>
+                <h3><span data-lang="vi">Vận hành phòng khám</span><span data-lang="en">Clinic operations</span></h3>
+                <p><span data-lang="vi">Quản lý bệnh nhân, nhân sự, lịch hẹn và quy trình điều trị cho phòng khám nha khoa đa chi nhánh.</span><span data-lang="en">Multi-branch patient, staff, appointment, and treatment workflows for dental clinics.</span></p>
               </div>
             </div>
             <div class="feature-item">
               <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" /></svg></span>
               <div>
-                <h3>AI analysis</h3>
-                <p>2D and 3D cephalometric analysis tools for orthodontic planning.</p>
+                <h3><span data-lang="vi">Phân tích AI</span><span data-lang="en">AI analysis</span></h3>
+                <p><span data-lang="vi">Công cụ phân tích sọ mặt 2D và 3D hỗ trợ lập kế hoạch chỉnh nha.</span><span data-lang="en">2D and 3D cephalometric analysis tools for orthodontic planning.</span></p>
               </div>
             </div>
             <div class="feature-item">
               <span class="check" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" /></svg></span>
               <div>
-                <h3>Paperless intake</h3>
-                <p>Digital consent and patient paperwork for clinics moving away from manual forms.</p>
+                <h3><span data-lang="vi">Tiếp nhận không giấy</span><span data-lang="en">Paperless intake</span></h3>
+                <p><span data-lang="vi">Số hóa phiếu đồng ý và hồ sơ bệnh nhân cho các phòng khám chuyển đổi khỏi biểu mẫu thủ công.</span><span data-lang="en">Digital consent and patient paperwork for clinics moving away from manual forms.</span></p>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="screen-stack" aria-label="Medbrain product screenshots">
+        <div class="screen-stack" aria-label="Ảnh chụp giao diện sản phẩm Medbrain" data-label-vi="Ảnh chụp giao diện sản phẩm Medbrain" data-label-en="Medbrain product screenshots">
           <figure class="screen-shot screen-main">
-            <img src="screenshots/3dceph.jpg" alt="3DCeph product interface" loading="lazy" />
+            <img src="screenshots/3dceph.jpg" alt="Giao diện sản phẩm 3DCeph" loading="lazy" />
           </figure>
           <figure class="screen-shot screen-secondary">
-            <img src="screenshots/paperlessme.jpg" alt="PaperlessMe product interface" loading="lazy" />
+            <img src="screenshots/paperlessme.jpg" alt="Giao diện sản phẩm PaperlessMe" loading="lazy" />
           </figure>
         </div>
       </div>
@@ -1129,17 +1325,21 @@
     <section id="products" class="section">
       <div class="container">
         <div class="crumina-heading align-center">
-          <p class="heading-sup-title">Sản phẩm / Our products</p>
-          <h2 class="heading-title">Platforms for modern <span>healthcare teams</span></h2>
+          <p class="heading-sup-title"><span data-lang="vi">Sản phẩm</span><span data-lang="en">Our products</span></p>
+          <h2 class="heading-title">
+            <span data-lang="vi">Nền tảng cho <span>đội ngũ y tế hiện đại</span></span>
+            <span data-lang="en">Platforms for modern <span>healthcare teams</span></span>
+          </h2>
           <p class="heading-text">
-            A practical product family spanning dental clinic management, cephalometric analysis, and paperless patient workflows.
+            <span data-lang="vi">Một bộ sản phẩm thực tế cho quản lý phòng khám nha khoa, phân tích sọ mặt và quy trình bệnh nhân không giấy.</span>
+            <span data-lang="en">A practical product family spanning dental clinic management, cephalometric analysis, and paperless patient workflows.</span>
           </p>
         </div>
 
         <div class="product-grid">
           <article class="product-card">
             <div class="product-media">
-              <img src="screenshots/viceph.jpg" alt="Viceph screenshot" loading="lazy" />
+              <img src="screenshots/viceph.jpg" alt="Ảnh chụp Viceph" loading="lazy" />
             </div>
             <div class="product-body">
               <div class="product-title">
@@ -1149,10 +1349,13 @@
                   <p class="domain">viceph.net</p>
                 </div>
               </div>
-              <p class="product-copy">Nền tảng quản lý phòng khám và phân tích phim sọ mặt trực tuyến cho bác sĩ nha khoa.</p>
-              <p class="product-copy en">Dental clinic management and online cephalometric analysis platform for orthodontists.</p>
+              <p class="product-copy">
+                <span data-lang="vi">Nền tảng quản lý phòng khám và phân tích phim sọ mặt trực tuyến cho bác sĩ nha khoa.</span>
+                <span data-lang="en">Dental clinic management and online cephalometric analysis platform for orthodontists.</span>
+              </p>
               <a class="product-link" href="https://viceph.net" target="_blank" rel="noopener">
-                Visit product
+                <span data-lang="vi">Xem sản phẩm</span>
+                <span data-lang="en">Visit product</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
               </a>
             </div>
@@ -1160,7 +1363,7 @@
 
           <article class="product-card">
             <div class="product-media">
-              <img src="screenshots/dentilink.jpg" alt="Dentilink screenshot" loading="lazy" />
+              <img src="screenshots/dentilink.jpg" alt="Ảnh chụp Dentilink" loading="lazy" />
             </div>
             <div class="product-body">
               <div class="product-title">
@@ -1170,10 +1373,13 @@
                   <p class="domain">dentilink.cc</p>
                 </div>
               </div>
-              <p class="product-copy">Phần mềm quản lý phòng khám nha khoa đa chi nhánh, kết nối bệnh nhân, nhân viên và quy trình điều trị.</p>
-              <p class="product-copy en">Multi-tenant dental clinic management SaaS connecting patients, staff, and clinical workflows.</p>
+              <p class="product-copy">
+                <span data-lang="vi">Phần mềm quản lý phòng khám nha khoa đa chi nhánh, kết nối bệnh nhân, nhân viên và quy trình điều trị.</span>
+                <span data-lang="en">Multi-tenant dental clinic management SaaS connecting patients, staff, and clinical workflows.</span>
+              </p>
               <a class="product-link" href="https://dentilink.cc" target="_blank" rel="noopener">
-                Visit product
+                <span data-lang="vi">Xem sản phẩm</span>
+                <span data-lang="en">Visit product</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
               </a>
             </div>
@@ -1181,7 +1387,7 @@
 
           <article class="product-card">
             <div class="product-media">
-              <img src="screenshots/3dceph.jpg" alt="3DCeph screenshot" loading="lazy" />
+              <img src="screenshots/3dceph.jpg" alt="Ảnh chụp 3DCeph" loading="lazy" />
             </div>
             <div class="product-body">
               <div class="product-title">
@@ -1191,10 +1397,13 @@
                   <p class="domain">3d.viceph.net</p>
                 </div>
               </div>
-              <p class="product-copy">Phân tích đầu mặt 3D ứng dụng trí tuệ nhân tạo, hỗ trợ lập kế hoạch điều trị chỉnh nha và hàm mặt.</p>
-              <p class="product-copy en">AI-powered 3D cephalometric analysis for orthodontics and maxillofacial treatment planning.</p>
+              <p class="product-copy">
+                <span data-lang="vi">Phân tích đầu mặt 3D ứng dụng trí tuệ nhân tạo, hỗ trợ lập kế hoạch điều trị chỉnh nha và hàm mặt.</span>
+                <span data-lang="en">AI-powered 3D cephalometric analysis for orthodontics and maxillofacial treatment planning.</span>
+              </p>
               <a class="product-link" href="https://3d.viceph.net" target="_blank" rel="noopener">
-                Visit product
+                <span data-lang="vi">Xem sản phẩm</span>
+                <span data-lang="en">Visit product</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
               </a>
             </div>
@@ -1202,7 +1411,7 @@
 
           <article class="product-card">
             <div class="product-media">
-              <img src="screenshots/paperlessme.jpg" alt="PaperlessMe screenshot" loading="lazy" />
+              <img src="screenshots/paperlessme.jpg" alt="Ảnh chụp PaperlessMe" loading="lazy" />
             </div>
             <div class="product-body">
               <div class="product-title">
@@ -1212,10 +1421,13 @@
                   <p class="domain">paperless.dentilink.cc</p>
                 </div>
               </div>
-              <p class="product-copy">Số hóa phiếu đồng ý và hồ sơ bệnh nhân, xây dựng phòng khám không giấy tờ toàn diện.</p>
-              <p class="product-copy en">Digital consent forms and patient paperwork for a paperless clinic front desk.</p>
+              <p class="product-copy">
+                <span data-lang="vi">Số hóa phiếu đồng ý và hồ sơ bệnh nhân, xây dựng phòng khám không giấy tờ toàn diện.</span>
+                <span data-lang="en">Digital consent forms and patient paperwork for a paperless clinic front desk.</span>
+              </p>
               <a class="product-link" href="https://paperless.dentilink.cc" target="_blank" rel="noopener">
-                Visit product
+                <span data-lang="vi">Xem sản phẩm</span>
+                <span data-lang="en">Visit product</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
               </a>
             </div>
@@ -1228,10 +1440,11 @@
       <div class="container directory-layout">
         <div>
           <div class="crumina-heading">
-            <p class="heading-sup-title">Leadership</p>
-            <h2 class="heading-title">Ban lãnh đạo</h2>
+            <p class="heading-sup-title"><span data-lang="vi">Ban lãnh đạo</span><span data-lang="en">Leadership</span></p>
+            <h2 class="heading-title"><span data-lang="vi">Đội ngũ điều hành</span><span data-lang="en">Leadership team</span></h2>
             <p class="heading-text">
-              Medbrain is led from Hanoi with a focus on practical healthcare software for clinics and specialists.
+              <span data-lang="vi">Medbrain được điều hành từ Hà Nội, tập trung vào phần mềm y tế thực tế cho phòng khám và bác sĩ chuyên khoa.</span>
+              <span data-lang="en">Medbrain is led from Hanoi with a focus on practical healthcare software for clinics and specialists.</span>
             </p>
           </div>
 
@@ -1241,7 +1454,7 @@
             </span>
             <div>
               <h3>Nguyễn Anh Tuấn</h3>
-              <p>CEO, Professional Director</p>
+              <p><span data-lang="vi">CEO, Giám đốc chuyên môn</span><span data-lang="en">CEO, Professional Director</span></p>
               <a href="mailto:tuannguyen@medbrainlab.com">tuannguyen@medbrainlab.com</a>
             </div>
           </div>
@@ -1249,21 +1462,21 @@
 
         <div>
           <div class="crumina-heading">
-            <p class="heading-sup-title">Thông tin công ty</p>
-            <h2 class="heading-title">Company information</h2>
+            <p class="heading-sup-title"><span data-lang="vi">Thông tin công ty</span><span data-lang="en">Company information</span></p>
+            <h2 class="heading-title"><span data-lang="vi">Hồ sơ pháp lý</span><span data-lang="en">Legal profile</span></h2>
           </div>
 
           <div class="company-grid">
             <div class="company-item">
-              <span>Tên pháp nhân / Legal name</span>
+              <span><span data-lang="vi">Tên pháp nhân</span><span data-lang="en">Legal name</span></span>
               <p>CÔNG TY TNHH MEDBRAIN</p>
             </div>
             <div class="company-item">
-              <span>Điện thoại / Phone</span>
+              <span><span data-lang="vi">Điện thoại</span><span data-lang="en">Phone</span></span>
               <a href="tel:+84981724131">098 1724 131</a>
             </div>
             <div class="company-item">
-              <span>Trụ sở chính / Headquarters</span>
+              <span><span data-lang="vi">Trụ sở chính</span><span data-lang="en">Headquarters</span></span>
               <p>Số 4 Ngõ 30 Phố Chùa Vua, phường Phố Huế, quận Hai Bà Trưng, Hà Nội</p>
             </div>
             <div class="company-item">
@@ -1271,19 +1484,19 @@
               <a href="mailto:contact@viceph.net">contact@viceph.net</a>
             </div>
             <div class="company-item">
-              <span>Văn phòng đại diện / Representative office</span>
+              <span><span data-lang="vi">Văn phòng đại diện</span><span data-lang="en">Representative office</span></span>
               <p>Số 93 Trường Chinh, phường Phương Liệt, quận Thanh Xuân, Hà Nội</p>
             </div>
             <div class="company-item">
-              <span>Mã số thuế / Tax ID</span>
+              <span><span data-lang="vi">Mã số thuế</span><span data-lang="en">Tax ID</span></span>
               <p>0110142247</p>
             </div>
             <div class="company-item">
-              <span>Cơ quan cấp / Issued by</span>
+              <span><span data-lang="vi">Cơ quan cấp</span><span data-lang="en">Issued by</span></span>
               <p>Sở Kế Hoạch Đầu Tư Hà Nội</p>
             </div>
             <div class="company-item">
-              <span>Ngày cấp / Registration date</span>
+              <span><span data-lang="vi">Ngày cấp</span><span data-lang="en">Registration date</span></span>
               <p>06/10/2022</p>
             </div>
           </div>
@@ -1291,16 +1504,93 @@
       </div>
     </section>
 
+    <section id="community" class="section social-section">
+      <div class="container">
+        <div class="crumina-heading align-center">
+          <p class="heading-sup-title"><span data-lang="vi">Ảnh &amp; sự kiện Viceph</span><span data-lang="en">Viceph photos &amp; events</span></p>
+          <h2 class="heading-title">
+            <span data-lang="vi">Hoạt động cộng đồng từ <span>Facebook Viceph</span></span>
+            <span data-lang="en">Community activity from <span>Viceph Facebook</span></span>
+          </h2>
+          <p class="heading-text">
+            <span data-lang="vi">Facebook công khai mô tả Viceph là giải pháp web ứng dụng AI cho bác sĩ chỉnh nha. Các ảnh và sự kiện mới nhất được liên kết trực tiếp về trang Facebook chính thức.</span>
+            <span data-lang="en">Facebook's public metadata describes Viceph as an AI-driven web-based solution for orthodontists. The latest photos and events are linked directly to the official Facebook page.</span>
+          </p>
+        </div>
+
+        <div class="social-grid">
+          <article class="social-card">
+            <div class="social-media">
+              <img src="social/viceph-facebook.jpg" alt="Ảnh đại diện Facebook Viceph" loading="lazy" />
+            </div>
+            <div class="social-body">
+              <p class="social-kicker">Facebook</p>
+              <h3><span data-lang="vi">Trang Viceph chính thức</span><span data-lang="en">Official Viceph page</span></h3>
+              <p>
+                <span data-lang="vi">Theo metadata công khai từ Facebook, Viceph giới thiệu giải pháp toàn thể cho bác sĩ chỉnh nha sử dụng trí tuệ nhân tạo trên nền tảng web.</span>
+                <span data-lang="en">According to Facebook's public metadata, Viceph presents an AI-driven web-based solution for orthodontists.</span>
+              </p>
+              <a class="social-link" href="https://www.facebook.com/VICEPH.NET/" target="_blank" rel="noopener">
+                <span data-lang="vi">Mở trang Facebook</span>
+                <span data-lang="en">Open Facebook page</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="social-card">
+            <div class="social-media">
+              <img src="screenshots/viceph.jpg" alt="Giao diện Viceph" loading="lazy" />
+            </div>
+            <div class="social-body">
+              <p class="social-kicker"><span data-lang="vi">Ảnh</span><span data-lang="en">Photos</span></p>
+              <h3><span data-lang="vi">Thư viện ảnh hoạt động</span><span data-lang="en">Activity photo gallery</span></h3>
+              <p>
+                <span data-lang="vi">Xem các ảnh cập nhật từ Viceph, bao gồm hoạt động sản phẩm, cộng đồng và nội dung truyền thông trên Facebook.</span>
+                <span data-lang="en">View Viceph photo updates, including product activity, community updates, and media posts on Facebook.</span>
+              </p>
+              <a class="social-link" href="https://www.facebook.com/VICEPH.NET/photos" target="_blank" rel="noopener">
+                <span data-lang="vi">Xem ảnh</span>
+                <span data-lang="en">View photos</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="social-card">
+            <div class="social-media">
+              <img src="screenshots/3dceph.jpg" alt="Giao diện 3DCeph" loading="lazy" />
+            </div>
+            <div class="social-body">
+              <p class="social-kicker"><span data-lang="vi">Sự kiện</span><span data-lang="en">Events</span></p>
+              <h3><span data-lang="vi">Lịch sự kiện &amp; workshop</span><span data-lang="en">Events &amp; workshops</span></h3>
+              <p>
+                <span data-lang="vi">Theo dõi các buổi giới thiệu, đào tạo và sự kiện cộng đồng liên quan đến Viceph trên trang sự kiện Facebook.</span>
+                <span data-lang="en">Follow Viceph demos, training sessions, and community events through the Facebook events page.</span>
+              </p>
+              <a class="social-link" href="https://www.facebook.com/VICEPH.NET/events" target="_blank" rel="noopener">
+                <span data-lang="vi">Xem sự kiện</span>
+                <span data-lang="en">View events</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h7v7h-2V6.41L5.41 20 4 18.59 17.59 5H14V3z" /></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section-tight cta-band">
       <div class="container cta-content">
         <div>
-          <h2>Healthcare workflows, built as focused software.</h2>
+          <h2><span data-lang="vi">Phần mềm tập trung cho quy trình chăm sóc sức khỏe.</span><span data-lang="en">Healthcare workflows, built as focused software.</span></h2>
           <p>
-            Explore the Medbrain product family or contact the team for clinic management, paperless intake, and cephalometric analysis solutions.
+            <span data-lang="vi">Khám phá bộ sản phẩm Medbrain hoặc liên hệ đội ngũ để trao đổi về quản lý phòng khám, tiếp nhận không giấy và phân tích sọ mặt.</span>
+            <span data-lang="en">Explore the Medbrain product family or contact the team for clinic management, paperless intake, and cephalometric analysis solutions.</span>
           </p>
         </div>
         <a class="btn btn-primary" href="mailto:contact@viceph.net">
-          Get in touch
+          <span data-lang="vi">Liên hệ</span>
+          <span data-lang="en">Get in touch</span>
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 5l7 7-7 7-1.42-1.42L16.16 13H4v-2h12.16l-4.58-4.58L13 5z" /></svg>
         </a>
       </div>
@@ -1309,7 +1599,10 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <div>&copy; 2026 Medbrain. All rights reserved.</div>
+      <div>
+        <span data-lang="vi">&copy; 2026 Medbrain. Mọi quyền được bảo lưu.</span>
+        <span data-lang="en">&copy; 2026 Medbrain. All rights reserved.</span>
+      </div>
       <div class="footer-links">
         <a href="https://viceph.net" target="_blank" rel="noopener">Viceph</a>
         <a href="https://dentilink.cc" target="_blank" rel="noopener">Dentilink</a>
@@ -1318,5 +1611,60 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const buttons = Array.from(document.querySelectorAll("[data-set-lang]"));
+      const titles = {
+        vi: "Medbrain - Công nghệ y tế",
+        en: "Medbrain - Healthcare Technology"
+      };
+      const descriptions = {
+        vi: "Medbrain xây dựng các nền tảng công nghệ y tế ứng dụng AI cho phòng khám, nha khoa, chỉnh nha và quy trình chăm sóc bệnh nhân.",
+        en: "Medbrain builds AI-enabled healthcare technology platforms for clinics, dentistry, orthodontics, and patient care workflows."
+      };
+      const metaDescription = document.querySelector('meta[name="description"]');
+
+      function setLanguage(language) {
+        const activeLanguage = language === "en" ? "en" : "vi";
+        root.lang = activeLanguage;
+        root.classList.toggle("lang-en", activeLanguage === "en");
+        root.classList.toggle("lang-vi", activeLanguage === "vi");
+        document.title = titles[activeLanguage];
+
+        if (metaDescription) {
+          metaDescription.setAttribute("content", descriptions[activeLanguage]);
+        }
+
+        document.querySelectorAll("[data-label-vi][data-label-en]").forEach((element) => {
+          element.setAttribute("aria-label", activeLanguage === "en" ? element.dataset.labelEn : element.dataset.labelVi);
+        });
+
+        buttons.forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.setLang === activeLanguage));
+        });
+
+        try {
+          localStorage.setItem("medbrain-language", activeLanguage);
+        } catch (error) {
+          // Ignore storage restrictions; Vietnamese remains the default.
+        }
+      }
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+      });
+
+      let savedLanguage = "vi";
+      try {
+        savedLanguage = localStorage.getItem("medbrain-language") || "vi";
+      } catch (error) {
+        savedLanguage = "vi";
+      }
+
+      setLanguage(savedLanguage);
+    })();
+  </script>
 </body>
 </html>
